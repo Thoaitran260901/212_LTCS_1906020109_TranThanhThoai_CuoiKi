@@ -257,13 +257,14 @@ namespace Tetris
             HttpClient client = new HttpClient();
             string user = txtName.Text;
             ScoreModel score1 = new ScoreModel();
+            DateTime localDate = DateTime.Now;
             score1.NickName = user;
             int score = gameState.Score;
             if (score > 0)
             {
                 client.BaseAddress = new Uri("https://localhost:9999/api/");
 
-                var payload = "{\"Nickname\": \"" + score1.NickName + "\",\"score\": " + score + "}";
+                var payload = "{\"Nickname\": \"" + score1.NickName + "\",\"score\": " + score + ",\"dateTime\":  \"" + localDate.ToString("yyyy-MM-ddTHH:mm:ss") + "\"}";
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 try
