@@ -10,6 +10,7 @@ namespace Tetris.Models
     {
         public string NickName { get; set; }
         public int Score { get; set; }
+        public DateTime dateTime { get; set; }
         
         public ScoreModel()
         {
