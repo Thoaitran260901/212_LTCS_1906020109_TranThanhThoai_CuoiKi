@@ -241,7 +241,8 @@ namespace Tetris
                 var res = "";
                 foreach (ScoreModel score in scoreModels)
                 {
-                    res += score.NickName + ": \t" + score.Score  + Environment.NewLine;
+                    string day = score.dateTime.Day.ToString() + "/"+ score.dateTime.Month.ToString() + "/"+ score.dateTime.Year.ToString();
+                    res += score.NickName + ": \t" + score.Score  +"\t"+ day + Environment.NewLine;
                 }
                 txtHighScore.Text = res;
             }
